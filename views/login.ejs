@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <%- include('nav.ejs') %>
+    <main>
+        <form action="/buildIn" method="post">
+            <div class="gray">
+                <label for="loginID">Please Enter Building ID:</label>
+                <input name="loginID" id="loginID" type="text" placeholder="Type here...">
+            </div>
+            <button id="enterBuildID" type="submit">ENTER</button>
+        </form>
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+</html>

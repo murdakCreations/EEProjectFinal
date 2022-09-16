@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/addDevice.css">
+</head>
+<body>
+    <%- include('navMain.ejs', {floors: deviceData}) %>
+    <div id="belowNav">
+        <div class="left">
+            <ul>
+                <li><a href="">Building</a></li>
+                <li>></li>
+                <li><a href="">Floor</a></li>
+                <li>></li>
+                <li><a href="">Room</a></li>
+                <li>></li>
+                <li><a href="">Devices</a></li>
+            </ul>
+        </div>
+        
+        <div class="right">
+            <input type="text" placeholder="Search here">
+            <button id="search"><img src="/images/Group 19.png" alt=""></button>
+        </div>
+    </div>
+    <main>
+        <div class="pgTitle">
+            <div>Summary of Electric Devices in <%=roomName%></div>
+        </div>
+        <div class="overall">
+            <button id="addImg">
+                <div id="btnText">
+                    + Add Floor Plan
+                </div>
+            </button>
+            <div class="modalForm" id="addImgModal">
+                <div id="dottedModal">
+                    <input type="text" name="" id="" placeholder="Add Floor Plan Name">
+                    <div class="inFile">
+                        <label for="imgFile">Select Image File</label>
+                        <input type="file" name="imgFile" id="imgFile" accept="image/png, image/gif, image/jpeg">
+                    </div>
+                    <div class="btns">
+                        <button id="saveImg" type="button">Save</button>
+                        <button id="closeModal">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tbl">
+                <table id="devTbl">
+                    <tr>
+                        <th>Devie ID</th>
+                        <th>Device Location</th>
+                        <th>Device Type</th>
+                        <th>Life Span</th>
+                        <th>Meter (Hr)</th>
+                        <th>Date of installment</th>
+                        <th>Time of installment</th>
+                        <th>Status</th>
+                        <th>Inspection Status</th>
+                        <th>Commands</th>
+                    </tr>
+                    <% for(var i = 0; i < deviceData.length; i++) {%>
+                        <% if(deviceData[i].devId) {%>    
+                            <tr>
+                                <td><%= deviceData[i].devId %></td>
+                                <td><%= deviceData[i].devLoc %></td>
+                                <td><%= deviceData[i].devTyp %></td>
+                                <td><%= deviceData[i].life %></td>
+                                <td id="<%= deviceData[i].devId %>">00:00:00</td>
+                                <td><%= deviceData[i].dateInstall %></td>
+                                <td><%= deviceData[i].timeInstall %></td>
+                                <td><%= deviceData[i].stat %></td>
+                                <td><%= deviceData[i].inspStat %></td>
+                                <td><button onclick="edit('<%= deviceData[i].devId %>','<%= deviceData[i].devLoc %>',
+                                '<%= deviceData[i].devTyp %>','<%= deviceData[i].life %>',
+                                '<%= deviceData[i].dateInstall %>','<%= deviceData[i].timeInstall %>',
+                                '<%= deviceData[i].stat %>','<%= deviceData[i].inspStat %>')">Edit</button>
+                                <button action="/device" onclick="deleteRow('<%= deviceData[i].devId %>')">Delete</button></td>
+                            </tr>
+                        <%}%>        
+                    <%}%>
+                </table>
+                <!--edit form-->
+                <form class="modalFormEdit">
+                    <div id="dottedModalEdit">
+                        <div class="modalInput">
+                            <label for="">Device ID</label>
+                            <input name="devId" type="text" id="devIDEdit" disabled>
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Device Location</label>
+                            <input name="devLoc" type="text" id="devLocEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Device Type</label>
+                            <input name="devTyp" type="text" id="devTypEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Life Span</label>
+                            <input name="life" type="number" id="lifeEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Meter</label>
+                            <input name="meter" type="text" disabled>
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Date of Installment</label>
+                            <input name="dateInstall" type="date" id="dateInstallEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Time of Installment</label>
+                            <input name="timeInstall" type="time" id="timeInstallEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Status</label>
+                            <input name="stat" type="text" id="statEdit">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Inspection Status</label>
+                            <input name="inspStat" type="text" id="inspStatEdit">
+                        </div>
+                        <input type="text" value="<%= roomID %>" id="roomIDEdit" hidden>
+                        <input type="text" value="<%= floorID %>" id="floorIDEdit" hidden>
+                        <input type="text" value="<%= bName %>" id="buildNameEdit" hidden>
+                        <div class="modalBtn">
+                            <button id="saveDevModalEdit">save</button>
+                            <button id="closeDevModalEdit">close</button>
+                        </div>
+                    </div>
+                </form>
+
+
+                <button id="addDevice">+Add Device</button>
+                
+                <!--Add Device Modal Form-->
+                <div class="modalForm" id="addDev">
+                    <form class="modalOverall">
+                        <div class="modalInput">
+                            <label for="">Device ID</label>
+                            <input name="devId" id="devId" type="text">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Device Location</label>
+                            <input name="devLoc" id="devLoc" type="text">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Device Type</label>
+                            <input name="devTyp" id="devTyp" type="text">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Life Span</label>
+                            <input name="life" id="life" type="number">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Meter</label>
+                            <input name="meter" id="meter" type="text" disabled>
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Date of Installment</label>
+                            <input name="dateInstall" id="dateInstall" type="date">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Time of Installment</label>
+                            <input name="timeInstall" id="timeInstall" type="time">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Status</label>
+                            <input name="stat" id="stat" type="text">
+                        </div>
+                        <div class="modalInput">
+                            <label for="">Inspection Status</label>
+                            <input name="inspStat" id="inspStat" type="text">
+                        </div>
+                        <input type="text" value="<%= roomID %>" id="roomID" hidden>
+                        <input type="text" value="<%= floorID %>" id="floorID" hidden>
+                        <input type="text" value="<%= bName %>" id="buildName" hidden>
+                        <div class="modalBtn">
+                            <button id="saveDevModal">save</button>
+                            <button id="closeDevModal">close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/javascript/addDevice.js"></script>
+</body>
+</html>

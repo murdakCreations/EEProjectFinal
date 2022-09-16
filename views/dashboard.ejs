@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <%- include('navMain.ejs', {floors: floors}) %>
+    <div id="belowNav">
+        <div class="right">
+            <!--<a href="/floor">Go to Building Floor</a>-->
+            <form action="/goTofloor" method="post">
+                <input type="text" value="<%= bName %>" name="floorBuild" hidden>
+                <button type="submit">Go to Building Floor</button>
+            </form>
+            <input type="text" placeholder="Search here">
+            <button id="search"><img src="/images/Group 19.png" alt=""></button>
+        </div>
+    </div>
+    <main>
+        <h1>Dashboard</h1>
+        <div class="overall">
+            <div class="initDiv">
+                <div id="calendar">
+                    <div class="monthYear">APRIL 2022</div>
+                    <table>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td class="red">13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="schedTasks">
+                    <h3>Scheduled Tasks</h3>
+                    <ul>
+                        <li><div class="bullet"></div><a href="">Checking of Devices</a></li>
+                    </ul>
+                    <a href="" id="viewSched">View all</a>
+                </div>
+            </div>
+            <div class="initDiv">
+                <div class="dashDisply">
+                    <h2>Devices</h2>
+                    <div class="figs">
+                        <input type="text" name="bulb" value="0">
+                        <input type="text" name="switch" value="0">
+                    </div>
+                    <label for="bulb">Bulb</label>
+                    <label for="switch">Switch</label>
+                    <button>View All</button>
+                </div>
+                <div class="dashDisply">
+                    <h2>Functional</h2>
+                    <div class="figs">
+                        <input type="text" value="0">
+                        <input type="text" value="0">
+                    </div>
+                    <label for="">Bulb</label>
+                    <label for="">Switch</label>
+                    <button>View All</button>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/javascript/dashboard.js"></script>
+</body>
+</html>

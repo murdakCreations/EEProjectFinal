@@ -1,0 +1,34 @@
+#belowNav {
+    background-color: #CCCBCB;
+    display: flex;
+    padding: 10px;
+}
+
+.left {
+    width: 20%;
+}
+
+.left ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.left li {
+    float: left;
+    margin: 5px;
+}
+
+.right {
+    width: 80%;
+}
+
+.right input{
+    float: right;
+    height: 100%;
+}
+
+#search {
+    float: right;
+    background-color: #fff;
+}
+

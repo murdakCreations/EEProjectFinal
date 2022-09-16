@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Floors</title>
+    <link rel="stylesheet" href="/css/buildFloors.css">
+</head>
+<body>
+    <%- include('navMain.ejs') %>
+    <%- include('belowNav.ejs') %>
+    <main>
+        <div id="floorArea">
+            <% for(var i = 0; i < floors.length; i++) {%>
+                <%if (floors[i].floorName) {%>
+                    <div onmouseover="hovered(this.id)" onmouseleave="left(this.id)" 
+                    id="<%=floors[i].floorID%>"
+                    class="floor"
+                    style="width: 200px;
+                    height: 200px;
+                    /*top right bottom left*/
+                    margin: 20px 10px 10px 10px;
+                    text-align: center;"    
+                    >
+                        <div class="floorName"><%=floors[i].floorName%></div>
+                        <div class="floorBtns" 
+                        style="display: none;
+                        margin: 0 0 0 35px;">
+                            <form action="/goToRooms" method="post">
+                                <input type="text" name="floorID" value="<%=floors[i].floorID%>" hidden>
+                                <input type="text" value="<%= bName %>" name="floorBuild" hidden>
+                                <input type="text" name="floorName" value="<%=floors[i].floorName%>" hidden>
+                                <button style="padding: 5px;">Visit</button>
+                            </form>
+                            <!--<button style="padding: 5px;" onclick="currFloor('<%=floors[i].floorName%>')">Visit</button>-->
+                            <button style="padding: 5px;" onclick="edit('<%=floors[i].floorID%>','<%=floors[i].floorName%>')">Edit</button>
+                            <button action="/floor" style="padding: 5px;" onclick="deleteFloor('<%=floors[i].floorID%>')">Delete</button>
+                        </div>
+                    </div>
+                <%}%>    
+            <%}%>
+            <button id="addFloor">Add Floor</button>
+        </div>
+        <!--edit form-->
+        <form class="modalFormEdit">
+            <div id="dottedModalEdit">
+                <div class="addFloorName">
+                    <div>
+                        <label for="floorID">Floor ID:</label>
+                        <input type="text" name="floorID2" id="floorIDEdit" disabled>
+                    </div>
+                    <label for="floorName">Floor Name:</label>
+                    <input type="text" name="floorName2" id="floorNameEdit">
+                </div>
+                <div class="btns">
+                    <button id="saveEdit">Save</button>
+                    <button id="closeEdit" type="button">Close</button>
+                </div>
+            </div>
+        </form>
+        <!--add form-->
+        <form class="modalForm">
+            <div id="dottedModal">
+                <div class="addFloorName">
+                    <div>
+                        <label for="floorID">Floor ID:</label>
+                        <input type="text" name="floorID" id="floorID">
+                    </div>
+                    <label for="floorName">Floor Name:</label>
+                    <input type="text" name="floorName" id="floorName">
+                    <input type="text" value="<%= bName %>" id="buildName" hidden>
+                </div>
+                <div class="btns">
+                    <button id="save">Save</button>
+                    <button id="close">Close</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/javascript/buildFloors.js"></script>
+</body>
+</html>

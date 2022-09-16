@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/navMain.css">
+<nav>
+    <a class="logo" href="#">
+        <img src="/images/20220607_113005_0000.jpg" alt="" srcset="">
+        ELEMA-GS2
+    </a>
+    <a class="notif" href="#">
+        <img src="/images/img_489991.png">
+        <div class="notifContent">
+            <% for(var i = 0; i < floors.length; i++) {%>
+                <% if (floors[i].life !== undefined && floors[i].life == 0) {%>
+                    <button>
+                        Life span of <%= floors[i].devId %> in location <%= floors[i].devLoc %> is now <%= floors[i].life %>
+                    </button>
+                    
+                <% }%>
+            <% }%>
+        </div>
+    </a>
+    <a class="buildName" href="#"><%= bName %></a>
+</nav>
+<script src="javascript/setInterval.js"></script>

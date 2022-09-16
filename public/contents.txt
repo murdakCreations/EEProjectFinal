@@ -1,0 +1,1 @@
+this folder contains stylesheets and js files

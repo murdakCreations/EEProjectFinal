@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: arial;
+    border: none;
+}
+
+nav {
+    background-color: black;
+    padding: 1em;
+}
+
+nav a {
+    color: white;
+}
+
+nav .logo {
+    font-size: 36px;
+}
+
+nav .notif img{
+    height: 40px;
+    width: 40px;
+    float: right;
+}
+
+nav .buildName {
+    font-size: 26px;
+    float:right;
+    margin-top: 0.3em;
+    margin-right: 0.5em;
+}
+
+nav .notifContent {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: gray;
+    float: right;
+}
+
+.notif:hover .notifContent {
+    display: block;
+}
+
+main .modalForm {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModal {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModal input {
+    margin: 5px;
+}
+
+#dottedModal .inFile {
+    margin: 5px;
+}
+
+#dottedModal .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
+
+main .pgTitle {
+    display: flex;
+    font-size: 27px;
+}
+
+main .pgTitle div {
+    margin: 10px;
+}
+
+main .pgTitle input{
+    border: none;
+    font-size: 27px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+main .overall {
+    display: flex;
+}
+
+main #addImg {
+    border-style: dotted;
+    width: 400px;
+    height: 400px;
+    /*top right bottom left*/
+    margin: 50px 30px 50px 50px;
+    background-color: white;
+}
+
+main .tbl {
+    /*top right bottom left*/
+    margin: 50px 0px 0px 0px;   
+}
+
+main .tbl table {
+    border-collapse: collapse;
+}
+
+main .tbl th{
+    border: 0.1em solid;
+    padding: 0.3em;
+}
+
+main .tbl table, th, td {
+    text-align: center;
+}
+
+main .tbl table, th, td a{
+    margin: 0.3em;
+}
+
+
+.modalInput input {
+    float: right;
+    border-bottom: 1px solid #000;
+}
+
+.modalInput {
+    margin: 10px;
+}
+
+.modalOverall {
+    width: 400px;
+    height: fit-content;
+    margin-top: 200px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.modalBtn {
+    float: right;
+    margin-right: 15px;
+}
+
+footer {
+    background-color: black;
+    padding: 1em;
+}
+
+footer a {
+    color: white;
+}

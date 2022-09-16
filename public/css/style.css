@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: arial;
+    border: none;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#welcome {
+    margin: 100px;
+}
+
+#welcome h1 {
+    font-size: 50px;
+}
+
+#getStarted {
+    font-size: 20px;
+    background-color: #19C940;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    /*top right bottom left*/
+    margin: 10px 70px;
+    cursor: pointer;
+}
+
+#getStarted:hover {
+    background-color: #0c972a;
+}

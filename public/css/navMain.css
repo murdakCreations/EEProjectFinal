@@ -1,0 +1,53 @@
+nav {
+    background-color: black;
+    padding: 10px;
+    height: fit-content;
+}
+
+nav a {
+    color: white;
+}
+
+.logo {
+    font-size: 36px;
+}
+
+.logo img {
+    width: 80px;
+    /*top right bottom left*/
+    margin: 0 0 0 10px;
+}
+
+nav .notif img{
+    height: 40px;
+    width: 40px;
+    float: right;
+}
+
+nav .buildName {
+    font-size: 26px;
+    float:right;
+    margin-top: 0.3em;
+    margin-right: 0.5em;
+}
+
+nav .notifContent {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    color: #000;
+    left: 950px;
+    width: 300px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+
+#belowNav {
+    background-color: #CCCBCB;
+    display: flex;
+    padding: 10px;
+}

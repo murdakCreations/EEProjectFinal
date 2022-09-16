@@ -1,0 +1,1 @@
+this file contains the ejs files which contains the html codes

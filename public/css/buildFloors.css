@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: arial;
+    border: none;
+}
+
+main .modalForm {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModal {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModal input {
+    margin: 5px;
+    border-bottom: #000 1px solid;
+}
+
+#dottedModal .addFloorName {
+    margin: 5px;
+}
+
+#dottedModal .btns{
+    float: right;
+}
+
+#dottedModal .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
+
+#floorArea {
+    display: block;
+}
+
+.floorName {
+    margin: 90px 0 0 0;
+}
+
+.floor {
+    display: inline-block;
+    position: relative;
+}
+
+#addFloor {
+    width: 200px;
+    height: 200px;
+    margin: 20px 10px 10px 10px;
+    background-color: #fff;
+    border: 2px dashed #CCCBCB;
+    cursor: pointer;
+}
+
+.modalFormEdit {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModalEdit {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModalEdit input {
+    margin: 5px;
+    border-bottom: #000 1px solid;
+}
+
+#dottedModalEdit .addFloorName {
+    margin: 5px;
+}
+
+#dottedModalEdit .btns{
+    float: right;
+}
+
+#dottedModalEdit .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
+
+.modalFormEdit {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModalEdit {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModalEdit input {
+    margin: 5px;
+    border-bottom: #000 1px solid;
+}
+
+#dottedModalEdit .addFloorName {
+    margin: 5px;
+}
+
+#dottedModalEdit .btns{
+    float: right;
+}
+
+#dottedModalEdit .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}

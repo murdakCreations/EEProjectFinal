@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building rooms</title>
+    <link rel="stylesheet" href="/css/buildRooms.css">
+</head>
+<body>
+    <%- include('navMain.ejs', {floors: rooms}) %>
+    <div id="belowNav">
+        <div class="left">
+            <ul>
+                <li><a href="">Building</a></li>
+                <li>></li>
+                <li><a href="">Floor</a></li>
+                <li>></li>
+                <li><a href="">Room</a></li>
+            </ul>
+        </div>
+        
+        <div class="right">
+            <input type="text" placeholder="Search here">
+            <button id="search"><img src="/images/Group 19.png" alt=""></button>
+        </div>
+    </div>
+    <main>
+        <div class="pgTitle">
+            <div>Rooms in <%=floorName%></div>
+            <!--<input type="text" value=""-->
+        </div>
+        <div id="roomArea">
+            <% for(var i = 0; i < rooms.length; i++) {%>
+                <%if (rooms[i].roomName) {%>
+                    <div onmouseover="hovered(this.id)" onmouseleave="left(this.id)" 
+                    id="<%=rooms[i].roomID%>"
+                    style="width: 200px;
+                    height: 200px;
+                    /*top right bottom left*/
+                    margin: 20px 10px 10px 10px;
+                    text-align: center;"    
+                    >
+                        <div class="roomName"><%=rooms[i].roomName%></div>
+                        <div class="roomBtns" 
+                        style="display: none;
+                        margin: 0 0 0 35px;">
+                            <!--<form action="/goToDevices" method="post">-->
+                            <form action="/goToAnotherDevices" method="post">
+                                <input type="text" name="floorID" value="<%=rooms[i].floorID%>" hidden>
+                                <input type="text" name="roomID" value="<%=rooms[i].roomID%>" hidden>
+                                <input type="text" value="<%= bName %>" name="floorBuild" hidden>
+                                <input type="text" name="roomName" value="<%=rooms[i].roomName%>" hidden>
+                                <input type="text" name="img" value="<%=rooms[i].img%>" hidden>
+                                <button style="padding: 5px;">Visit</button>
+                            </form>
+                            <!--<button style="padding: 5px;" onclick="currFloor('<%=rooms[i].roomName%>')">Visit</button>-->
+                            <button style="padding: 5px;" onclick="edit('<%=rooms[i].roomID%>','<%=rooms[i].roomName%>')">Edit</button>
+                            <button action="/room" style="padding: 5px;" onclick="deleteFloor('<%=rooms[i].roomID%>')">Delete</button>
+                        </div>
+                    </div>
+                <%}%>    
+            <%}%>
+            <button id="addRoom">Add Room</button>
+                  
+            
+        </div>
+        <!--edit form-->
+        <form class="modalFormEdit">
+            <div id="dottedModalEdit">
+                <div class="addRoomName">
+                    <div>
+                        <label for="floorName">Floor ID:</label>
+                        <input type="text" name="floorID" id="floorIDEdit" value="<%=floorID%>" disabled>
+                    </div>
+                    <div>
+                        <label for="roomID">Room ID:</label>
+                        <input type="text" name="roomID" id="roomIDEdit">
+                    </div>
+                    <label for="roomName">Room Name:</label>
+                    <input type="text" name="roomName" id="roomNameEdit">
+                </div>
+                <div class="btns">
+                    <button id="saveEdit" >Save</button>
+                    <button id="closeEdit">Close</button>
+                </div>
+            </div>
+        </form>
+
+        <!--Add Room Form-->
+        <form class="modalForm">
+            <div id="dottedModal">
+                <div class="addRoomName">
+                    <div>
+                        <label for="floorName">Floor ID:</label>
+                        <input type="text" name="floorID" id="floorID" value="<%=floorID%>" disabled>
+                    </div>
+                    <div>
+                        <label for="roomID">Room ID:</label>
+                        <input type="text" name="roomID" id="roomID">
+                    </div>
+                    <label for="roomName">Room Name:</label>
+                    <input type="text" name="roomName" id="roomName">
+                    <input type="text" value="<%= bName %>" id="buildName" hidden>
+                </div>
+                <div class="btns">
+                    <button id="save">Save</button>
+                    <button id="close">Close</button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+    <%- include('footer.ejs') %>
+    <script src="/javascript/buildRooms.js"></script>
+</body>
+</html>

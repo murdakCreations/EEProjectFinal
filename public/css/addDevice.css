@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: arial;
+    border: none;
+}
+
+main .modalForm {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModal {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModal input {
+    margin: 5px;
+}
+
+#dottedModal .inFile {
+    margin: 5px;
+}
+
+#dottedModal .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
+
+#belowNav {
+    background-color: #CCCBCB;
+    display: flex;
+    padding: 10px;
+}
+
+.left {
+    width: 30%;
+}
+
+.left ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.left li {
+    float: left;
+    margin: 5px;
+}
+
+.right {
+    width: 70%;
+}
+
+.right input{
+    float: right;
+    height: 100%;
+}
+
+#search {
+    float: right;
+    background-color: #fff;
+}
+
+main .pgTitle {
+    display: flex;
+    font-size: 27px;
+}
+
+main .pgTitle div {
+    margin: 10px;
+}
+
+main .pgTitle input{
+    border: none;
+    font-size: 27px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+main .overall {
+    display: flex;
+}
+
+main .addImg {
+    border-style: dotted;
+    width: 400px;
+    height: 400px;
+    /*top right bottom left*/
+    margin: 50px 30px 50px 50px;
+    background-color: white;
+}
+
+.floorImg {
+    width: 400px;
+    height: 400px;
+}
+
+main .tbl {
+    /*top right bottom left*/
+    margin: 50px 0px 0px 0px;   
+}
+
+main .tbl table {
+    border-collapse: collapse;
+}
+
+main .tbl th{
+    border: 0.1em solid;
+    padding: 0.3em;
+}
+
+main .tbl table, th, td {
+    text-align: center;
+}
+
+main .tbl table, th, td button{
+    margin: 0.3em;
+    background-color: white;
+}
+
+
+.modalInput input {
+    float: right;
+    border-bottom: 1px solid #000;
+}
+
+.modalInput {
+    margin: 10px;
+}
+
+.modalOverall {
+    width: 400px;
+    height: fit-content;
+    margin-top: 200px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.modalBtn {
+    float: right;
+    margin-right: 15px;
+}
+
+.modalFormEdit {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModalEdit {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModalEdit input {
+    margin: 5px;
+    border-bottom: #000 1px solid;
+}
+
+#dottedModalEdit .addFloorName {
+    margin: 5px;
+}
+
+#dottedModalEdit .btns{
+    float: right;
+}
+
+#dottedModalEdit .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
+
+.modalFormEdit {
+    display: none;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(230, 230, 230, 0.8); /* Black w/ opacity */
+}
+
+#dottedModalEdit {
+    margin-top: 200px;
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+
+#dottedModalEdit input {
+    margin: 5px;
+    border-bottom: #000 1px solid;
+}
+
+#dottedModalEdit .addFloorName {
+    margin: 5px;
+}
+
+#dottedModalEdit .btns{
+    float: right;
+}
+
+#dottedModalEdit .btns button{
+    /*top right bottom left*/
+    margin: 0px 5px 0px 5px;
+    padding: 5px 10px;
+}
